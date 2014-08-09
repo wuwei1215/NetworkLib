@@ -1,7 +1,5 @@
 package com.wuwei.network;
 
-import java.lang.ref.SoftReference;
-
 import com.wuwei.network.request.BaseRequest;
 import com.wuwei.network.reslove.BaseResolve;
 import com.wuwei.network.response.BaseResponse;
@@ -26,7 +24,7 @@ public class RequestManager {
 	 * @return 请求ID
 	 */
 	public static int getResponse(BaseRequest mBaseRequest,
-			BaseResolve mBaseResolve, SoftReference<BaseResponse> mBaseResponse) {
+			BaseResolve mBaseResolve, BaseResponse mBaseResponse) {
 		mBaseRequest.setResolve(mBaseResolve);
 		mBaseRequest.setResponse(mBaseResponse);
 		return DefaultThreadPool.getInstance().execute(mBaseRequest);

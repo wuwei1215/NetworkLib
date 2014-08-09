@@ -2,7 +2,6 @@ package com.wuwei.network.request;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.lang.ref.SoftReference;
 import java.security.KeyStore;
 import java.util.ArrayList;
 
@@ -142,8 +141,8 @@ public abstract class BaseRequest implements Runnable {
 		addRequestParameter(new RequestParameter(name, value));
 	}
 
-	public void setResponse(SoftReference<BaseResponse> mBaseResponseReference) {
-		this.mBaseResponse = mBaseResponseReference.get();
+	public void setResponse(BaseResponse mBaseResponse) {
+		this.mBaseResponse = mBaseResponse;
 	}
 
 	public void setResolve(BaseResolve mBaseResolve) {
